@@ -5,7 +5,7 @@
     toDoAppConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider']
     function toDoAppConfig($stateProvider, $urlRouterProvider, $locationProvider){
         //TODO: Add two more parameters here
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/notavailable');
 
         $stateProvider.state('dashboard',{
             url:'/',
