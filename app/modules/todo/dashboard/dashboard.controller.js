@@ -7,10 +7,10 @@
     angular.module('myApp')
         .controller('tasks', tasks)
 
-    tasks.$inject = ['$scope', 'taskFactory']
-    function tasks($scope, taskFactory){
+    tasks.$inject = ['$scope', 'taskService']
+    function tasks($scope, taskService){
         var tc = this;
-        tc.taskList = [];
+        tc.ALL_TASKS = [];
 
         loadTasksJSON();
 
@@ -18,9 +18,9 @@
          * Loads the JSON data
          */
         function loadTasksJSON(){
-            taskFactory.getTask().then(function(response){
-                tc.taskList = response.data;
-            });
+            taskService.readTask()
+                .then(function(response){ tc.ALL_TASKS = response.data;})
+                .catch(function(error){ console.log("---Error occured while reading tasks---"); });
         }
     }
 })()

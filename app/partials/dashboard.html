@@ -5,14 +5,27 @@
                 <option>-select-</option>
             </select>
         </div>
-        <div class="col-md-3 pull-right">
-            <button class="btn btn-primary">Add new Task</button>
+        <div class="col-md-2 pull-right">
+            <button class="btn btn-small btn-primary">{{'newTask'|translate}}</button>
         </div>
     </div>
-    {{tc.taskList}}
+    <br/>
     <div class="row">
-        <div class="col-md-4">1</div>
-        <div class="col-md-4">2</div>
-        <div class="col-md-4">3</div>
+        <div class="col-md-4" ng-repeat="task in tc.ALL_TASKS">
+            <div class="task-box">
+                <div class="row">
+                    <div class="col-md-6">{{task.name}}</div>
+                    <div class="col-md-6">Icons</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>{{'Description'|translate}}: {{task.description}}</p>
+                        <p>{{'Status'|translate}}: {{task.status}}</p>
+                        <p>{{'Start date'|translate}}: {{task['start-date']}} {{'End date'|translate}}:{{task['end-date']}}</p>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </div>
     </div>
 </div>

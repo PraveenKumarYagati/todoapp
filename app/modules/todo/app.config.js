@@ -3,9 +3,10 @@
         .config(toDoAppConfig)
 
     /*Injectors*/
-    toDoAppConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider']
-    function toDoAppConfig($stateProvider, $urlRouterProvider, $locationProvider){
-        //TODO: Add two more parameters here
+    toDoAppConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$translateProvider']
+    function toDoAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider){
+        /*====================Route=================================*/
+
         $urlRouterProvider.otherwise('/notavailable');
 
         $stateProvider.state('dashboard',{
@@ -22,5 +23,12 @@
             enabled: true,
             requireBase: false
         });
+
+        /*=======================Translate==============================*/
+        $translateProvider.useStaticFilesLoader({
+            prefix: 'app/i18n/messages-',
+            suffix: '.json'
+        });
+        $translateProvider.preferredLanguage('sp');
     }
 })();
