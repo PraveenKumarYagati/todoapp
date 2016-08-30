@@ -20,10 +20,10 @@
 <body>
   <div class="container">
       <div class="row">
-          <div class="col-md-4">{{ 'Logo' | translate }}</div>
-          <div class="col-md-2 pull-right">
-              <a tabindex="1" class="lang-en">{{ 'Lang-en' | translate }}</a>
-              <a tabindex="1" class="lang-sp">{{ 'Lang-sp' | translate }}</a>
+          <div class="col-md-4"><h3>{{ 'Logo' | translate }}</h3></div>
+          <div class="col-md-2 pull-right" ng-controller="languageChange as lcc">
+              <a tabindex="1" ng-click="lcc.changeLanguage('en')" class="lang-en">{{'Lang-en'|translate}}</a>
+              <a tabindex="1" ng-click="lcc.changeLanguage('sp')" class="lang-sp">{{'Lang-sp'|translate}}</a>
           </div>
       </div>
       <br/>
@@ -31,7 +31,9 @@
           <div ui-view>  </div>
       </div>
       <div class="row footer">
-          <h4>{{ 'footer-title' | translate }}</h4>
+          <div class="col-md-3 pull-right">
+              <h4>{{ 'footer-title' | translate }}</h4>
+          </div>
       </div>
   </div>
   <!--Scripts-->
@@ -44,6 +46,7 @@
   <script src="app/modules/todo/app.module.js"></script>
   <script src="app/modules/todo/app.config.js"></script>
   <script src="app/modules/todo/app.run.js"></script>
+  <script src="app/modules/todo/language/language.controller.js"></script>
   <script src="app/modules/todo/dashboard/dashboard.controller.js"></script>
   <script src="app/modules/todo/dashboard/dashboard.service.js"></script>
   <script src="app/components/version/interpolate-filter.js"></script>

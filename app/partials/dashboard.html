@@ -14,10 +14,10 @@
         <div class="col-md-4" ng-repeat="task in tc.ALL_TASKS">
             <div class="task-box">
                 <div class="row">
-                    <div class="col-md-6"><fieldset><label><h4>{{task.name}}</h4></label></fieldset></div>
+                    <div class="col-md-6"><fieldset><legend><h4>{{task.name}}</h4></legend></fieldset></div>
                     <div class="col-md-3 pull-right">
                         <a ng-click=""><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
-                        <a ng-click=""><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i></a>
+                        <input type="checkbox" class="task-selected-item" ng-modal="isChecked"/>
                     </div>
                 </div>
                 <div class="row">
