@@ -3,9 +3,9 @@
  */
 
 (function(){
-    angular.module('myApp')
+    angular.module('todo.language')
         .controller('languageChange', languageChange)
-    languageChange.$inject = ['$translate']
+    languageChange.$inject = ['$translate'];
 
     function languageChange($translate){
         var lcc = this;

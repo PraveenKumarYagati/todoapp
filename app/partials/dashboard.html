@@ -22,9 +22,20 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div>{{'Description'|translate}}: {{task.description}}</div>
-                        <div>{{'Status'|translate}}: {{task.status}}</div>
-                        <div>{{'Start date'|translate}}: {{task['start-date']}} {{'End date'|translate}}:{{task['end-date']}}</div>
+                        <div>
+                            <span>{{'Description'|translate}}:</span>
+                            <span>{{task.description}}</span>
+                        </div>
+                        <div>
+                            <span>{{'Status'|translate}}:</span>
+                            <span class="capitalize">{{task.status|lowercase}}</span>
+                        </div>
+                        <div>
+                            <span>{{'Start date'|translate}}:</span>
+                            <span>{{task['start-date']}}</span>
+                            <span>{{'End date'|translate}}:</span>
+                            <span>{{task['end-date']}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
