@@ -6,7 +6,7 @@
             </select>
         </div>
         <div class="col-md-2 pull-right">
-            <button class="btn btn-small btn-primary">{{'newTask'|translate}}</button>
+            <button class="btn btn-small btn-primary"><i class="fa fa-plus-square-o fa-1x" aria-hidden="true"></i> {{'newTask'|translate}}</button>
         </div>
     </div>
     <br/>
@@ -14,14 +14,17 @@
         <div class="col-md-4" ng-repeat="task in tc.ALL_TASKS">
             <div class="task-box">
                 <div class="row">
-                    <div class="col-md-6">{{task.name}}</div>
-                    <div class="col-md-6">Icons</div>
+                    <div class="col-md-6"><fieldset><label><h4>{{task.name}}</h4></label></fieldset></div>
+                    <div class="col-md-3 pull-right">
+                        <a ng-click=""><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+                        <a ng-click=""><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i></a>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <p>{{'Description'|translate}}: {{task.description}}</p>
-                        <p>{{'Status'|translate}}: {{task.status}}</p>
-                        <p>{{'Start date'|translate}}: {{task['start-date']}} {{'End date'|translate}}:{{task['end-date']}}</p>
+                        <div>{{'Description'|translate}}: {{task.description}}</div>
+                        <div>{{'Status'|translate}}: {{task.status}}</div>
+                        <div>{{'Start date'|translate}}: {{task['start-date']}} {{'End date'|translate}}:{{task['end-date']}}</div>
                     </div>
                 </div>
             </div>
