@@ -11,35 +11,6 @@
     </div>
     <br/>
     <div class="row">
-        <div class="col-md-4" ng-repeat="task in tc.ALL_TASKS">
-            <div class="task-box">
-                <div class="row">
-                    <div class="col-md-6"><fieldset><legend><h4>{{task.name}}</h4></legend></fieldset></div>
-                    <div class="col-md-3 pull-right">
-                        <a ng-click=""><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
-                        <input type="checkbox" class="task-selected-item" ng-modal="isChecked"/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div>
-                            <span>{{'Description'|translate}}:</span>
-                            <span>{{task.description}}</span>
-                        </div>
-                        <div>
-                            <span>{{'Status'|translate}}:</span>
-                            <span class="capitalize">{{task.status|lowercase}}</span>
-                        </div>
-                        <div>
-                            <span>{{'Start date'|translate}}:</span>
-                            <span>{{task['start-date']}}</span>
-                            <span>{{'End date'|translate}}:</span>
-                            <span>{{task['end-date']}}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br/>
-        </div>
+        <task-content></task-content>
     </div>
 </div>
