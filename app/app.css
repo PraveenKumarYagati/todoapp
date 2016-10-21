@@ -17,8 +17,11 @@ body {
     background:#eee;
 }
 input.task-selected-item{
-    width: 26px;
-    height: 23px;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
 }
 .control-section, .header-section{
     border-bottom:2px solid #666;

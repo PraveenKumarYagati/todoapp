@@ -8,7 +8,7 @@
 
     function taskContent(){
         return {
-            restrict:'E',
+            restrict:'AE',
             templateUrl:'/app/partials/tasks.html'
         }
     }
